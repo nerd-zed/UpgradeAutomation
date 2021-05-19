@@ -15,9 +15,14 @@ def setup(browser):
 
 def pytest_addoption(parser):
     parser.addoption("--browser")
+    parser.addoption("--modulename")
 
 
 @pytest.fixture()
 def browser(request):
     return request.config.getoption('--browser')
 
+#
+# @pytest.fixture()
+# def modulename(request):
+#     return request.config.getoption('--modulename')
